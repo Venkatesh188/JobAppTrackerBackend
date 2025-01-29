@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // Use environment variable for MongoDB connection
-const mongoURI = process.env.MONGODB_URI || "mongodb+srv://Venkatesh:Gambler@123@cluster0.azvgd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const mongoURI = process.env.MONGODB_URI || "mongodb+srv://Venkatesh:@cluster0.azvgd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose
   .connect(mongoURI)
