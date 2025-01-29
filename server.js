@@ -11,7 +11,8 @@ app.use(cors());
 app.use(express.json());
 
 // Use environment variable for MongoDB connection
-const mongoURI = process.env.MONGODB_URI || "mongodb+srv://username:password@cluster0.mongodb.net/jobApplications?retryWrites=true&w=majority";
+const mongoURI = process.env.MONGODB_URI || "mongodb+srv://Venkatesh:Gambler@123@cluster0.azvgd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
 mongoose
   .connect(mongoURI)
   .then(() => console.log("Connected to MongoDB Atlas"))
@@ -60,8 +61,8 @@ app.post("/save-job", upload.fields([{ name: "resume" }, { name: "coverLetter" }
       jobRole,
       companyName,
       jobDescription,
-      resumePath: `https://your-heroku-app.herokuapp.com${resumePath}`,
-      coverLetterPath: coverLetterPath ? `https://your-heroku-app.herokuapp.com${coverLetterPath}` : null,
+      resumePath: `https://your-render-app.onrender.com${resumePath}`,
+      coverLetterPath: coverLetterPath ? `https://your-render-app.onrender.com${coverLetterPath}` : null,
     });
 
     await newJob.save();
