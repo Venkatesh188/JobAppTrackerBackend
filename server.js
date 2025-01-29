@@ -28,12 +28,9 @@ const upload = multer({ storage });
 
 // Connect to MongoDB
 mongoose
-  .connect("mongodb://localhost:27017/jobApplications")
-  .then(() => console.log("Connected to MongoDB successfully"))
-  .catch((err) => {
-    console.error("MongoDB Connection Error:", err.message);
-    process.exit(1);
-  });
+  .connect("mongodb+srv://Venkatesh:Gambler@123@cluster0.azvgd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+  .then(() => console.log("Connected to MongoDB Atlas"))
+  .catch((err) => console.error("MongoDB Connection Error:", err));
 
 // Define Schema & Model
 const jobSchema = new mongoose.Schema({
